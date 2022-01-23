@@ -5,6 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/MybatisPlusStudy.iml" filepath="$PROJECT_DIR$/MybatisPlusStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/_01_MPEnvironment/_01_MPEnvironment.iml" filepath="$PROJECT_DIR$/_01_MPEnvironment/_01_MPEnvironment.iml" />
       <module fileurl="file://$PROJECT_DIR$/_02_CURD/_02_CURD.iml" filepath="$PROJECT_DIR$/_02_CURD/_02_CURD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_03_ActiveRecord/_03_ActiveRecord.iml" filepath="$PROJECT_DIR$/_03_ActiveRecord/_03_ActiveRecord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_04_AutoGenerator/_04_AutoGenerator.iml" filepath="$PROJECT_DIR$/_04_AutoGenerator/_04_AutoGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_05_Plugin/_05_Plugin.iml" filepath="$PROJECT_DIR$/_05_Plugin/_05_Plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_06_CustomConfiguration/_06_CustomConfiguration.iml" filepath="$PROJECT_DIR$/_06_CustomConfiguration/_06_CustomConfiguration.iml" />
     </modules>
   </component>
 </project>

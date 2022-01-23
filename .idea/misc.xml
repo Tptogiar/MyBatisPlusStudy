@@ -5,6 +5,10 @@
       <list>
         <option value="$PROJECT_DIR$/_01_MPEnvironment/pom.xml" />
         <option value="$PROJECT_DIR$/_02_CURD/pom.xml" />
+        <option value="$PROJECT_DIR$/_03_ActiveRecord/pom.xml" />
+        <option value="$PROJECT_DIR$/_04_AutoGenerator/pom.xml" />
+        <option value="$PROJECT_DIR$/_05_Plugin/pom.xml" />
+        <option value="$PROJECT_DIR$/_06_CustomConfiguration/pom.xml" />
       </list>
     </option>
   </component>

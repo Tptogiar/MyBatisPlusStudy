@@ -8,12 +8,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="_01_MPEnvironment" />
+        <module name="_04_AutoGenerator" />
+        <module name="_05_Plugin" />
+        <module name="_06_CustomConfiguration" />
+        <module name="_03_ActiveRecord" />
         <module name="_02_CURD" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="_01_MPEnvironment" target="1.5" />
       <module name="_02_CURD" target="7" />
+      <module name="_03_ActiveRecord" target="7" />
+      <module name="_04_AutoGenerator" target="1.5" />
+      <module name="_05_Plugin" target="7" />
+      <module name="_06_CustomConfiguration" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
