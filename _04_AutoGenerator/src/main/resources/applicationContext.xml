@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+
+    <context:property-placeholder location="classpath:config.properties"/>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    <!-- 事务管理器 -->
+    <bean id="dataSourceTransactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!-- 基于注解的事务管理 -->
+    <tx:annotation-driven
+            transaction-manager="dataSourceTransactionManager"/>
+
+    <!-- 配置 SqlSessionFactoryBean -->
+<!--    仅仅需要把 SqlSessionFactoryBean 替换为MP自带的即可-->
+
+<!--    <bean id="sqlSessionFactoryBean"-->
+<!--          class="org.mybatis.spring.SqlSessionFactoryBean">-->
+
+    <bean id="sqlSessionFactoryBean"
+          class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation"
+                  value="classpath:mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath*:com/mapper/*.xml"/>
+        <!-- 别名处理 -->
+        <property name="typeAliasesPackage"
+                  value="po"></property>
+        <property name="globalConfig" ref="globalConfiguration"/>
+    </bean>
+
+
+
+
+    <!--
+    配置mybatis 扫描mapper 接口的路径
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage"
+                  value="com.mapper"></property>
+    </bean>
+
+
+
+    <!-- 定义MybatisPlus的全局策略配置-->
+    <bean id ="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+        <!-- 在2.3版本以后，dbColumnUnderline 默认值就是true -->
+        <property name="dbColumnUnderline" value="true"></property>
+
+        <!-- 全局的主键策略 -->
+        <property name="idType" value="0"></property>
+
+        <!-- 全局的表前缀策略配置 -->
+        <property name="tablePrefix" value="tbl_"></property>
+    </bean>
+
+</beans>
